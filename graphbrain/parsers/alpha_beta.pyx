@@ -510,7 +510,8 @@ class AlphaBeta(Parser):
                         if ((atom.type()[0] == 'c' and
                                 child.connector_type()[0] == 'c') or
                                 self._is_compound(child_token)):
-                            if entity.connector_type()[0] == 'c':
+                            if (entity.connector_type()[0] == 'c' and
+                                  not self._is_compound(child_token)):
                                 if (child.connector_type()[0] == 'c' and
                                         entity.connector_type() != 'cm'):
                                     logging.debug('choice: 6')
