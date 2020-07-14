@@ -577,6 +577,9 @@ class AlphaBeta(Parser):
                     logging.debug('choice: 18')
                     # NEST PREDICATE
                     entity = nest_predicate(entity, child, pos)
+                elif not entity.is_atom() and child_type == 'Ma' and entity[0].type() == 'Br':
+                    # PD - connect adjectives to their parent entity
+                    entity = hedge((entity[0], enclose(child, entity[1])) + entity[2:])
                 else:
                     logging.debug('choice: 19')
                     # NEST
