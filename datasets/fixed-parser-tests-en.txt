@@ -1,0 +1,10 @@
+Berlin is the capital city of Germany and one of its city states.
+(is/Pd.sc.|f--3s-/en berlin/Cp.s/en (and/J/en (the/Md/en (of/Br.ma/en (+/B.am/. capital/Cc.s/en city/Cc.s/en) germany/Cp.s/en)) (of/Br.ma/en one/C#/en (its/Mp/en (+/B.am/. city/Cc.s/en states/Cc.p/en)))))
+Night vision glasses are on sale.
+(are/Pd.sx.|f-----/en (+/B.aam/. night/Cc.s/en vision/Cc.s/en glasses/Cc.p/en) (on/T/en sale/Cc.s/en))
+Night vision glasses for sale.
+(for/Br.ma/en (+/B.aam/. night/Cc.s/en vision/Cc.s/en glasses/Cc.p/en) sale/Cc.s/en)
+Features are short dark hair, dark brown eyes and night vision glasses.
+(are/Pd.sc.|f-----/en features/Cc.p/en (+/B.mm/. (short/Ma/en (dark/Ma/en hair/Cc.s/en)) (and/J/en (dark/Ma/en (brown/Ma/en eyes/Cc.p/en)) (+/B.aam/. night/Cc.s/en vision/Cc.s/en glasses/Cc.p/en))))
+Issues like environmental technology, carbon intensity, sustainable agriculture and forestry, water technology, waste management, community investing, affordable housing, sustainable property and infrastructure, human rights, microfinance or governance.
+(like/Br.ma/en issues/Cc.p/en (+/B.mm/. (environmental/Ma/en technology/Cc.s/en) (+/B.amm/. carbon/Cc.s/en intensity/Cc.s/en (+/B.mm/. (and/J/en (sustainable/Ma/en agriculture/Cc.s/en) forestry/Cc.s/en) (+/B.amm/. water/Cc.s/en technology/Cc.s/en (+/B.amm/. waste/Cc.s/en management/Cc.s/en (+/B.amm/. community/Cc.s/en investing/Cc.s/en (+/B.mm/. (affordable/Ma/en housing/Cc.s/en) (+/B.mm/. (and/J/en (sustainable/Ma/en property/Cc.s/en) infrastructure/Cc.s/en) (+/B.mm/. (human/Ma/en rights/Cc.p/en) (or/J/en microfinance/Cc.s/en governance/Cc.s/en)))))))))))
