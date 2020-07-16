@@ -48,6 +48,33 @@ def enclose(connector, edge):
         return hedge((edge[0], enclose(connector, edge[1])) + edge[2:])
 
 
+def sequence(entity, child, pos):
+    # PD - correctly sequence compound nouns into relational or conjunction edges
+    if entity.connector_type() in ['Br', 'J']:
+        return hedge(tuple((entity[0], sequence(entity[1], child, pos))) + entity[2:])
+    else:
+        return entity.sequence(child, pos)
+
+
+def replace_atom(entity, old, new):
+    # PD - a safer implementation of replace_atom that will only replace first occurrence
+    if entity.is_atom():
+        if entity == old:
+            return new
+        else:
+            return entity
+    items = []
+    found = False
+    for item in entity:
+        if found:
+            items.append(item)
+        else:
+            new_child = replace_atom(item, old, new)
+            found = new_child != item
+            items.append(new_child)
+    return hedge(items)
+
+
 # TODO: check this!
 # example:
 # applying (and/J bank/Cm (credit/Cn.s card/Cn.s)) to records/Cn.p
@@ -231,7 +258,8 @@ class AlphaBeta(Parser):
 
     def _compose_concepts(self, concepts):
         first = concepts[0]
-        if first.is_atom() or first[0].type()[0] != 'M':
+        # PD - fix for composing concepts containing relational or conjunction edges
+        if first.is_atom() or first[0].type()[0] != 'M' or concepts[1].connector_type()[0] != 'C':
             concept_roles = [self._concept_role(concept)
                              for concept in concepts]
             builder = '+/B.{}/.'.format(''.join(concept_roles))
@@ -486,13 +514,13 @@ class AlphaBeta(Parser):
                             # NEST AROUND ORIGINAL ATOM
                             if atom.type()[0] == 'C' and len(child) > 2:
                                 new_child = hedge((child[0], child[1:]))
-                                entity = entity.replace_atom(
+                                entity = replace_atom(entity,
                                     atom,
                                     atom.nest(new_child, pos))
                             else:
                                 logging.debug('choice: 4b')
                                 # NEST AROUND ORIGINAL ATOM
-                                entity = entity.replace_atom(
+                                entity = replace_atom(entity,
                                     atom,
                                     atom.nest(child, pos))
                     elif child.connector_type()[0] == 'T':
@@ -505,7 +533,9 @@ class AlphaBeta(Parser):
                                 self._is_compound(child_token)):
                             if entity.connector_type()[0] == 'C':
                                 if (child.connector_type()[0] == 'C' and
-                                        entity.connector_type() != 'Cm'):
+                                        entity.connector_type() != 'Cm' and
+                                        # PD - d not nest compound noun phrase
+                                        self._is_compound(child_token)):
                                     logging.debug('choice: 6')
                                     # SEQUENCE
                                     entity = entity.sequence(child, pos)
@@ -514,20 +544,23 @@ class AlphaBeta(Parser):
                                     # FLAT SEQUENCE
                                     entity = entity.sequence(
                                         child, pos, flat=False)
-                            elif (entity.connector_type() == 'Br' and
-                                  not self._is_compound(child_token)):
-                                logging.debug('choice: 7b')
-                                # NEST
-                                entity = child.nest(entity, before=pos)
+                            elif entity.connector_type() in ['Br', 'J']:
+                                if self._is_compound(child_token):
+                                    entity = sequence(entity, child, pos)
+                                    # entity = hedge(tuple((entity[0], sequence(entity[1], atom, child, pos))) + entity[2:])
+                                else:
+                                    logging.debug('choice: 7b')
+                                    # NEST
+                                    entity = child.nest(entity, before=pos)
                             else:
                                 logging.debug('choice: 8')
                                 # SEQUENCE IN ORIGINAL ATOM
-                                entity = entity.replace_atom(
+                                entity = replace_atom(entity,
                                     atom,
                                     atom.sequence(child, pos))
                         else:
                             logging.debug('choice: 9')
-                            entity = entity.replace_atom(
+                            entity = replace_atom(entity,
                                 atom, atom.connect((child,)))
                 elif ent_type[0] == 'T' and child.connector_type() == 'Mt':
                     logging.debug('choice: 10a')
@@ -577,13 +610,15 @@ class AlphaBeta(Parser):
                     logging.debug('choice: 18')
                     # NEST PREDICATE
                     entity = nest_predicate(entity, child, pos)
-                elif not entity.is_atom() and child_type == 'Ma' and entity[0].type() == 'Br':
-                    # PD - connect adjectives to their parent entity
-                    entity = hedge((entity[0], enclose(child, entity[1])) + entity[2:])
                 else:
-                    logging.debug('choice: 19')
-                    # NEST
-                    entity = enclose(child, entity)
+                    # PD - connect adjectival modifiers to their parent concept
+                    if child_type == 'Ma' and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
+                        logging.debug('choice: 19a')
+                        entity = hedge(tuple([enclose(child, entity[0])]) + entity[1:])
+                    else:
+                        logging.debug('choice: 19b')
+                        # NEST
+                        entity = enclose(child, entity)
             else:
                 logging.warning('Failed to parse token (_parse_token): {}'
                                 .format(token))
