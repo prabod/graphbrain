@@ -1,23 +1,23 @@
 The two men conducted a lengthy correspondence and collaborated on an initially joint vision of human psychology.
 (and/J/en (conducted/Pd.so.<f-----/en (the/Md/en (two/M#/en men/Cc.p/en)) (a/Md/en (lengthy/Ma/en correspondence/Cc.s/en))) (collaborated/Pd.x.<f-----/en (on/T/en (an/Md/en ((initially/M/en joint/Ma/en) (of/Br.ma/en vision/Cc.s/en (human/Ma/en psychology/Cc.s/en)))))))
 Freud saw in the younger man the potential heir he had been seeking to carry on his "new science" of psychoanalysis.
-(saw/Pd.sxo.<f-----/en freud/Cp.s/en (in/T/en (the/Md/en (younger/Mc/en man/Cc.s/en))) (:/J/. (the/Md/en (potential/Ma/en heir/Cc.s/en)) ((had/Mv.<f-----/en (been/Mv.<pf----/en seeking/Pr.sr.|pg----/en)) he/Ci/en ((to/Mi/en (on/Mt/en carry/P.o.-i-----/en)) (his/Mp/en (new/Ma/en (of/Br.ma/en science/Cc.s/en psychoanalysis/Cc.s/en)))))))
+(saw/Pd.sxo.<f-----/en freud/Cp.s/en (in/T/en (the/Md/en (younger/Mc/en man/Cc.s/en))) (:/J/. (the/Md/en (potential/Ma/en heir/Cc.s/en)) ((had/Mv.<f-----/en (been/Mv.<pf----/en seeking/Pr.sr.|pg----/en)) he/Ci/en ((to/Mi/en carry/P.o.-i-----/en) (on/T/en (his/Mp/en (new/Ma/en (of/Br.ma/en science/Cc.s/en psychoanalysis/Cc.s/en))))))))
 I will never stop laughing at this.
 ((will/Mm/en (never/Mn/en stop/Pd.sr.-i-----/en)) i/Ci/en (laughing/P.x.|pg----/en (at/T/en this/Cd/en)))
 Unknown to most, their brains are a battleground.
 (are/Pd.xsc.|f-----/en (unknown/Pd.x.-------/en (to/T/en most/Ca/en)) (their/Mp/en brains/Cc.p/en) (a/Md/en battleground/Cc.s/en))
 Lady shows you the oldest living wolf.
-(shows/Pd.sio.|f--3s-/en lady/Cp.s/en you/Ci/en (the/Md/en (oldest/Ms/en (living/Mv.|pg----/en wolf/Cc.s/en))))
+(shows/Pd.sio.|f--3s-/en lady/Cc.s/en you/Ci/en (the/Md/en (oldest/Ms/en (+/B.am/. living/Cc.s/en wolf/Cc.s/en))))
 Lawyers say they will issue judicial review proceedings if Brexit secretary fails to release 50 studies of effect on industry
-(say/Pd.sr.|f-----/en lawyers/Cc.p/en ((will/Mm/en issue/Pr.sox.-i-----/en) they/Ci/en (judicial/Ma/en (+/B.am/. review/Cc.s/en proceedings/Cc.p/en)) (if/T/en (fails/Pd.sr.|f--3s-/en (+/B.am/. brexit/Cp.s/en secretary/Cc.s/en) ((to/Mi/en release/P.ox.-i-----/en) (50/M#/en (of/Br.ma/en studies/Cc.p/en effect/Cc.s/en)) (on/T/en industry/Cc.s/en))))))
+(say/Pd.sr.|f-----/en lawyers/Cc.p/en ((will/Mm/en issue/Pr.sox.-i-----/en) they/Ci/en (judicial/Ma/en (+/B.am/. review/Cc.s/en proceedings/Cc.p/en)) (if/T/en (fails/Pd.sr.|f--3s-/en (+/B.am/. brexit/Cp.s/en secretary/Cc.s/en) ((to/Mi/en release/P.o.-i-----/en) (50/M#/en (of/Br.ma/en studies/Cc.p/en (on/Br.ma/en effect/Cc.s/en industry/Cc.s/en))))))))
 The fifth connects to revived E.U. religions and feelings about French teachers demanding business-destroying regulatory limits.
 (connects/Pd.sx.|f--3s-/en (the/Md/en fifth/Ca/en) (to/T/en (and/J/en (revived/Mv.<pf----/en (+/B.am/. e%2eu%2e/Cp.s/en religions/Cc.p/en)) (about/Br.ma/en feelings/Cc.p/en (:/J/. (french/Ma/en teachers/Cc.p/en) (demanding/P.o.|pg----/en ((business/M/en destroying/Mv.|pg----/en) (regulatory/Ma/en limits/Cc.p/en))))))))
 In September 2016, we learned that the University of New Hampshire was going to use $1 million that an incredibly frugal librarian saved while working as a library cataloger for 50 years to buy a new scoreboard for its stadium.
 (learned/Pd.xsr.<f-----/en (in/Tt/en (2016/M#/en september/Cp.s/en)) we/Ci/en (that/T/en ((was/Mv.<f-----/en going/Pr.sr.|pg----/en) (the/Md/en (of/Br.ma/en university/Cp.s/en (+/B.am/. new/Cp.s/en hampshire/Cp.s/en))) ((to/Mi/en use/P.o.-i-----/en) (:/J/. ($/M/en (1/M#/en million/C#/en)) (saved/Pr.osx.<pf----/en that/C/en (an/Md/en ((incredibly/M/en frugal/Ma/en) librarian/Cc.s/en)) (while/T/en (working/Pd.xxx.|pg----/en (as/T/en (a/Md/en (+/B.am/. library/Cc.s/en cataloger/Cc.s/en))) (for/Tt/en (50/M#/en years/Cc.p/en)) ((to/Mi/en buy/Pd.o.-i-----/en) (a/Md/en (new/Ma/en (for/Br.ma/en scoreboard/Cc.s/en (its/Mp/en stadium/Cc.s/en)))))))))))))
 An anarchist takes on Big Pharma by teaching patients to make their own meds
-((on/Ml/en takes/Pd.sox.|f--3s-/en) (an/Md/en anarchist/Cc.s/en) (+/B.am/. big/Cp.s/en pharma/Cp.s/en) (by/T/en (teaching/P.or.|pg----/en patients/Cc.p/en ((to/Mi/en make/P.o.-i-----/en) (their/Mp/en (own/Ma/en meds/Cc.p/en))))))
+((on/Ml/en takes/Pd.sox.|f--3s-/en) (an/Md/en anarchist/Cc.s/en) (+/B.am/. big/Cp.s/en pharma/Cp.p/en) (by/T/en (teaching/P.or.|pg----/en patients/Cc.p/en ((to/Mi/en make/P.o.-i-----/en) (their/Mp/en (own/Ma/en meds/Cc.p/en))))))
 That seems both super dangerous, and super awesome.
-(seems/Pd.s?.|f--3s-/en that/Cd/en (and/J/en (both/Md/en (super/M/en dangerous/Ca/en)) (super/M/en awesome/Ca/en)))
+(seems/Pd.sr.|f--3s-/en that/Cd/en (and/J/en (both/Md/en (super/M/en dangerous/Ca/en)) (super/M/en awesome/Ca/en)))
 Briton dies in fall from Indian temple while taking selfie
 (dies/Pd.sxxx.|f--3s-/en briton/Cp.s/en (in/T/en fall/Cc.s/en) (from/T/en (indian/Ma/en temple/Cc.s/en)) (while/T/en (taking/Pd.o.|pg----/en selfie/Cc.s/en)))
 I hate everyone in the White House!
@@ -51,13 +51,13 @@ Sweden is the third-largest country in the European Union by area.
 France's Le Pen says people no longer want the EU
 (says/Pd.sr.|f--3s-/en ('s/Bp.am/en france/Cp.s/en (+/B.am/. le/Cp.s/en pen/Cp.s/en)) (((no/Mn/en longer/M/en) want/Pr.so.|f-----/en) people/Cc.p/en (the/Md/en eu/Cp.s/en)))
 Wii will fail just like the arcade games of yesteryear.
-((will/Mm/en fail/Pd.sx.-i-----/en) wii/Cp.s/en ((just/M/en like/T/en) (the/Md/en (of/Br.ma/en (+/B.am/. arcade/Cc.s/en games/Cc.p/en) yesteryear/Cc.p/en))))
+((will/Mm/en fail/Pd.sx.-i-----/en) wii/Cp.s/en ((just/M/en like/T/en) (the/Md/en (of/Br.ma/en (+/B.am/. arcade/Cp.s/en games/Cc.p/en) yesteryear/Cc.p/en))))
 Mary will come if the weather is good.
 ((will/Mm/en come/Pd.sx.-i-----/en) mary/Cp.s/en (if/T/en (is/Pd.sc.|f--3s-/en (the/Md/en weather/Cc.s/en) good/Ca/en)))
 Mary will come if it doesn't rain.
 ((will/Mm/en come/Pd.sx.-i-----/en) mary/Cp.s/en (if/T/en ((does/Mv.|f--3s-/en (n't/Mn/en rain/Pd.s.-i-----/en)) it/Ci/en)))
 US suspects Russian hackers planted fake news behind Qatar crisis.
-(suspects/Pd.sr.|f--3s-/en us/Cp.s/en (planted/Pr.so.<f-----/en (russian/Ma/en hackers/Cc.p/en) (fake/Ma/en (behind/Br.ma/en news/Cc.s/en (+/B.am/. qatar/Cp.s/en crisis/Cc.s/en)))))
+(suspects/Pd.sr.|f--3s-/en us/Cp.s/en (planted/Pr.sox.<f-----/en (russian/Ma/en hackers/Cc.p/en) (fake/Ma/en news/Cc.s/en) (behind/T/en (+/B.am/. qatar/Cp.s/en crisis/Cc.s/en))))
 North Korea accuses Trump of being 'selfish' over Paris climate pact
 (accuses/Pd.sox.|f--3s-/en (+/B.am/. north/Cp.s/en korea/Cp.s/en) trump/Cp.s/en (of/T/en (being/P.c.|pg----/en (over/Br.ma/en selfish/Ca/en (+/B.aam/. paris/Cp.s/en climate/Cc.s/en pact/Cc.s/en)))))
 What happens when literary novelists experiment with science fiction.
@@ -65,13 +65,13 @@ What happens when literary novelists experiment with science fiction.
 Exposure to the bacteria in soil can be good for mental health
 ((can/Mm/en be/Pd.sc.-i-----/en) (to/Br.ma/en exposure/Cc.s/en (the/Md/en (in/Br.ma/en bacteria/Cc.p/en soil/Cc.s/en))) (for/Br.ma/en good/Ca/en (mental/Ma/en health/Cc.s/en)))
 Some subspecies of mosquito might be 1st to be genetically wiped out.
-((might/Mm/en be/Pd.scr.-i-----/en) (some/Md/en (of/Br.ma/en subspecies/Cc.p/en mosquito/Cc.s/en)) 1st/Ca/en (to/Mi/en (be/Mv.-i-----/en (genetically/M/en (out/Ml/en wiped/P..<pf----/en)))))
+((might/Mm/en be/Pd.sc.-i-----/en) (some/Md/en (of/Br.ma/en subspecies/Cc.p/en mosquito/Cc.s/en)) (+/B.mm/. 1st/Ca/en (to/Mi/en (be/Mv.-i-----/en (genetically/M/en (out/Ml/en wiped/P..<pf----/en))))))
 Telmo is going to the gym.
 ((is/Mv.|f--3s-/en going/Pd.sx.|pg----/en) telmo/Cp.s/en (to/T/en (the/Md/en gym/Cc.s/en)))
 Due to its location in the European Plain, Berlin is influenced by a temperate seasonal climate.
 ((is/Mv.|f--3s-/en influenced/Pd.xpa.<pf----/en) ((to/M/en due/T/en) (its/Mp/en (in/Br.ma/en location/Cc.s/en (the/Md/en (+/B.am/. european/Cp.s/en plain/Cp.s/en))))) berlin/Cp.s/en (by/T/en (a/Md/en (temperate/Ma/en (seasonal/Ma/en climate/Cc.s/en)))))
 Koikuchi shoyu, best known as soy sauce, is the mother of all sauces in Japan.
-(is/Pd.sc.|f--3s-/en (:/J/. (+/B.am/. koikuchi/Ca/en shoyu/Cc.s/en) ((best/M^/en known/P.x.<pf----/en) (as/T/en (+/B.am/. soy/Cc.s/en sauce/Cc.s/en)))) (the/Md/en (of/Br.ma/en mother/Cc.s/en (all/Md/en (in/Br.ma/en sauces/Cc.p/en japan/Cp.s/en)))))
+(is/Pd.sc.|f--3s-/en (:/J/. (+/B.am/. koikuchi/Cp.s/en shoyu/Cc.s/en) ((best/M^/en known/P.x.<pf----/en) (as/T/en (+/B.am/. soy/Cc.s/en sauce/Cc.s/en)))) (the/Md/en (of/Br.ma/en mother/Cc.s/en (all/Md/en (in/Br.ma/en sauces/Cc.p/en japan/Cp.s/en)))))
 Carl Gustav Jung was a Swiss psychiatrist and psychoanalyst who founded analytical psychology.
 (was/Pd.sc.<f-----/en (+/B.aam/. carl/Cp.s/en gustav/Cp.s/en jung/Cp.s/en) (:/J/. (and/J/en (a/Md/en (swiss/Ma/en psychiatrist/Cc.s/en)) psychoanalyst/Cc.s/en) (founded/Pr.so.<f-----/en who/Cw/en (analytical/Ma/en psychology/Cc.s/en))))
 As a notable research scientist based at the famous Burghölzli hospital, under Eugen Bleuler, he came to the attention of the Viennese founder of psychoanalysis, Sigmund Freud.
@@ -93,7 +93,7 @@ What time is it?
 A new Einstein cross is discovered
 ((is/Mv.|f--3s-/en discovered/Pd.p.<pf----/en) (a/Md/en (new/Ma/en (+/B.am/. einstein/Cp.s/en cross/Cc.s/en))))
 An Elusive Whale Is Found All Around the World
-((is/Mv.|f--3s-/en found/Pd.px.<pf----/en) (an/Md/en (elusive/Ma/en whale/Cc.s/en)) ((all/Md/en around/T/en) (the/Md/en world/Cc.s/en)))
+((is/Mv.|f--3s-/en found/Pd.px.<pf----/en) (an/Md/en (elusive/Ma/en whale/Cc.s/en)) ((all/M/en around/T/en) (the/Md/en world/Cc.s/en)))
 According to people present, she simply ploughed on with her intention to hold a third vote on her deal this week.
 ((simply/M/en (on/Ml/en ploughed/Pd.xsx.<f-----/en)) ((to/Mt/en according/Tv.|pg----/en) (present/Ma/en people/Cc.p/en)) she/Ci/en (with/Tt/en (:/J/. (her/Mp/en intention/Cc.s/en) ((to/Mi/en hold/P.ox.-i-----/en) (a/Md/en (third/Ma/en (on/Br.ma/en vote/Cc.s/en (her/Mp/en deal/Cc.s/en)))) (this/Md/en week/Cc.s/en)))))
 Our brains are always looking for relative rewards.

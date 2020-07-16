@@ -3,7 +3,6 @@ from itertools import repeat
 from collections import defaultdict, Counter
 import logging
 import spacy
-import neuralcoref
 from graphbrain import *
 import graphbrain.constants as const
 from graphbrain.meaning.concepts import has_common_or_proper_concept
@@ -106,6 +105,7 @@ class AlphaBeta(Parser):
         self.extra_edges = set()
         self.nlp = spacy.load(model_name)
         if resolve_corefs:
+            import neuralcoref
             coref = neuralcoref.NeuralCoref(self.nlp.vocab)
             self.nlp.add_pipe(coref, name='neuralcoref')
 

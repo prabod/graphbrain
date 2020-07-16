@@ -94,8 +94,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         'numpy',
-        'spacy==2.1',
-        'neuralcoref==4.0.0',
+        'spacy==2.3',
+        # 'neuralcoref==4.0.0',
         'plyvel',
         'python-igraph',
         'termcolor',
