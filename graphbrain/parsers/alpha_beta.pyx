@@ -131,10 +131,10 @@ class AlphaBeta(Parser):
         self.cur_text = None
         self.extra_edges = set()
         self.nlp = spacy.load(model_name)
-        if resolve_corefs:
-            import neuralcoref
-            coref = neuralcoref.NeuralCoref(self.nlp.vocab)
-            self.nlp.add_pipe(coref, name='neuralcoref')
+        # if resolve_corefs:
+        #     import neuralcoref
+        #     coref = neuralcoref.NeuralCoref(self.nlp.vocab)
+        #     self.nlp.add_pipe(coref, name='neuralcoref')
 
     # ========================================================================
     # Language-specific abstract methods, to be implemented in derived classes
@@ -258,15 +258,16 @@ class AlphaBeta(Parser):
 
     def _compose_concepts(self, concepts):
         first = concepts[0]
-        # PD - fix for composing concepts containing relational or conjunction edges
-        if first.is_atom() or first[0].type()[0] != 'M' or concepts[1].connector_type()[0] != 'C':
-            concept_roles = [self._concept_role(concept)
-                             for concept in concepts]
-            builder = '+/B.{}/.'.format(''.join(concept_roles))
-            return hedge(builder).connect(concepts)
-        else:
-            return hedge((first[0],
-                          self._compose_concepts(first[1:] + concepts[1:])))
+        second = concepts[1]
+        # PD - fix for composing builders and conjunctions
+
+        if len(concepts) == 2 and not second.is_atom() and second[0].type()[0] == 'B':
+            concepts = tuple([first] + list(second[1:]))
+
+        concept_roles = [self._concept_role(concept)
+                         for concept in concepts]
+        builder = '+/B.{}/.'.format(''.join(concept_roles))
+        return hedge(builder).connect(concepts)
 
     def _post_process(self, entity):
         if entity.is_atom():
@@ -496,7 +497,7 @@ class AlphaBeta(Parser):
                               'J' in [c.type() for c in children[i + 2:]]):
                             logging.debug('choice: 2c')
                             next_child = child_up.nest(child)
-                        elif entity.connector_type()[0] == 'C':
+                        elif entity.connector_type()[0] == 'C' or child.connector_type() == 'Bp':
                             # NEST
                             if len(child) == 2:
                                 logging.debug('choice: 3a')
@@ -534,11 +535,17 @@ class AlphaBeta(Parser):
                             if entity.connector_type()[0] == 'C':
                                 if (child.connector_type()[0] == 'C' and
                                         entity.connector_type() != 'Cm' and
-                                        # PD - d not nest compound noun phrase
-                                        self._is_compound(child_token)):
-                                    logging.debug('choice: 6')
+                                        child.type() != 'Ca'):
                                     # SEQUENCE
-                                    entity = entity.sequence(child, pos)
+                                    if entity.is_atom() or entity[-1] == atom:
+                                        # PD - for multiword compound noun phrases
+                                        logging.debug('choice: 6a')
+                                        entity = entity.sequence(child, pos, flat=self._is_compound(child_token))
+                                    else:
+                                        logging.debug('choice: 6b')
+                                        entity = replace_atom(entity, entity[0], entity[0].sequence(child, pos))
+                                # elif entity.depth() > 1:
+                                #     entity = hedge(tuple([entity[0].sequence(child, pos, flat=False)]) + entity[1:])
                                 else:
                                     logging.debug('choice: 7')
                                     # FLAT SEQUENCE
@@ -547,7 +554,6 @@ class AlphaBeta(Parser):
                             elif entity.connector_type() in ['Br', 'J']:
                                 if self._is_compound(child_token):
                                     entity = sequence(entity, child, pos)
-                                    # entity = hedge(tuple((entity[0], sequence(entity[1], atom, child, pos))) + entity[2:])
                                 else:
                                     logging.debug('choice: 7b')
                                     # NEST
@@ -561,7 +567,7 @@ class AlphaBeta(Parser):
                         else:
                             logging.debug('choice: 9')
                             entity = replace_atom(entity,
-                                atom, atom.connect((child,)))
+                                atom, atom.sequence(child, pos, flat=False))
                 elif ent_type[0] == 'T' and child.connector_type() == 'Mt':
                     logging.debug('choice: 10a')
                     # NEST PREDICATE
@@ -592,7 +598,10 @@ class AlphaBeta(Parser):
             elif child_type[0] == 'J':
                 logging.debug('choice: 14')
                 # ?
-                entity = child + entity
+                if entity.is_atom() or entity[0] == atom:
+                    entity = child + entity
+                else:
+                    entity = hedge(tuple([entity[0].sequence(child, True)]) + entity[1:])
             elif child_type[0] == 'P':
                 logging.debug('choice: 15')
                 # CONNECT
@@ -615,6 +624,8 @@ class AlphaBeta(Parser):
                     if child_type == 'Ma' and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
                         logging.debug('choice: 19a')
                         entity = hedge(tuple([enclose(child, entity[0])]) + entity[1:])
+                    elif child_type[0] == 'M' and entity.connector_type() == 'Bp':
+                        entity = hedge((entity[0], enclose(child, entity[1])))
                     else:
                         logging.debug('choice: 19b')
                         # NEST

@@ -146,7 +146,10 @@ class ParserEN(AlphaBeta):
                 return self._concept_type_and_subtype(token)
         elif dep in {'appos', 'attr', 'dative', 'dep', 'dobj', 'nsubj',
                      'nsubjpass', 'oprd', 'pobj', 'meta'}:
-            return self._concept_type_and_subtype(token)
+            if self._is_verb(token) and dep == 'dep':
+                return 'P'
+            else:
+                return self._concept_type_and_subtype(token)
         elif dep in {'advcl', 'csubj', 'csubjpass', 'parataxis'}:
             return 'Pd'
         elif dep in {'relcl', 'ccomp'}:
@@ -160,7 +163,10 @@ class ParserEN(AlphaBeta):
             else:
                 return 'P'
         elif dep in {'amod', 'nummod', 'preconj'}:  # , 'predet'}:
-            return self._modifier_type_and_subtype(token)
+            if self._is_noun(token):
+                return self._concept_type_and_subtype(token)
+            else:
+                return self._modifier_type_and_subtype(token)
         elif dep == 'det':
             if token.head.dep_ == 'npadvmod':
                 return self._builder_type_and_subtype(token)
@@ -246,7 +252,7 @@ class ParserEN(AlphaBeta):
     def _concept_type_and_subtype(self, token):
         tag = token.tag_
         dep = token.dep_
-        if dep == 'nmod':
+        if dep in ['nmod', 'amod'] and not tag[:3] == 'NNP':
             return 'Cm'
         if tag[:2] == 'JJ':
             return 'Ca'
@@ -324,8 +330,9 @@ class ParserEN(AlphaBeta):
 
     def _concept_role(self, concept):
         if concept.is_atom():
-            token = self.atom2token[UniqueAtom(concept)]
-            if token.dep_ == 'compound':
+            atom = UniqueAtom(concept)
+            if ((len(concept.type()) > 1 and concept.type()[1] in ['a', 'm']) or
+                    (atom in self.atom2token and self.atom2token[atom].dep_ == 'compound')):
                 return 'a'
             else:
                 return 'm'

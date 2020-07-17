@@ -35,7 +35,7 @@ Satellites from NASA and other agencies have been tracking sea ice changes since
 The algorithm can play both black and white.
 ((can/Mm/en play/Pd.so.-i-----/en) (the/Md/en algorithm/Cc.s/en) (and/J/en (both/Md/en black/Ca/en) white/Ca/en))
 Britain's hopes of a trade deal with America just suffered a big blow.
-((just/M/en suffered/Pd.so.<f-----/en) (of/Br.ma/en ('s/Bp.am/en britain/Cp.s/en hopes/Cc.p/en) (a/Md/en (with/Br.ma/en (+/B.am/. trade/Cc.s/en deal/Cc.s/en) america/Cp.s/en))) (a/Md/en (big/Ma/en blow/Cc.s/en)))
+((just/M/en suffered/Pd.so.<f-----/en) ('s/Bp.am/en britain/Cp.s/en (of/Br.ma/en hopes/Cc.p/en (a/Md/en (with/Br.ma/en (+/B.am/. trade/Cc.s/en deal/Cc.s/en) america/Cp.s/en)))) (a/Md/en (big/Ma/en blow/Cc.s/en)))
 My name is Telmo.
 (is/Pd.sc.|f--3s-/en (my/Mp/en name/Cc.s/en) telmo/Cp.s/en)
 I admire the fact that you are honest.
@@ -65,7 +65,7 @@ What happens when literary novelists experiment with science fiction.
 Exposure to the bacteria in soil can be good for mental health
 ((can/Mm/en be/Pd.sc.-i-----/en) (to/Br.ma/en exposure/Cc.s/en (the/Md/en (in/Br.ma/en bacteria/Cc.p/en soil/Cc.s/en))) (for/Br.ma/en good/Ca/en (mental/Ma/en health/Cc.s/en)))
 Some subspecies of mosquito might be 1st to be genetically wiped out.
-((might/Mm/en be/Pd.sc.-i-----/en) (some/Md/en (of/Br.ma/en subspecies/Cc.p/en mosquito/Cc.s/en)) (+/B.mm/. 1st/Ca/en (to/Mi/en (be/Mv.-i-----/en (genetically/M/en (out/Ml/en wiped/P..<pf----/en))))))
+((might/Mm/en be/Pd.sc.-i-----/en) (some/Md/en (of/Br.ma/en subspecies/Cc.p/en mosquito/Cc.s/en)) (+/B.am/. 1st/Ca/en (to/Mi/en (be/Mv.-i-----/en (genetically/M/en (out/Ml/en wiped/P..<pf----/en))))))
 Telmo is going to the gym.
 ((is/Mv.|f--3s-/en going/Pd.sx.|pg----/en) telmo/Cp.s/en (to/T/en (the/Md/en gym/Cc.s/en)))
 Due to its location in the European Plain, Berlin is influenced by a temperate seasonal climate.
@@ -101,7 +101,7 @@ Our brains are always looking for relative rewards.
 Scientists rise up against statistical significance
 ((up/Ml/en rise/Pd.sx.|f-----/en) scientists/Cc.p/en (against/T/en (statistical/Ma/en significance/Cc.s/en)))
 A pretty touch screen is ALL the iPhone has to offer.
-(is/Pd.sr.|f--3s-/en (a/Md/en (pretty/Ma/en (+/B.am/. touch/Cc.s/en screen/Cc.s/en))) (has/Pr.sr.|f--3s-/en (all/M/en (the/Md/en iphone/Cp.s/en)) (to/Mi/en offer/P..-i-----/en)))
+(is/Pd.sr.|f--3s-/en (a/Md/en (+/B.am/. (pretty/Ma/en touch/Cm/en) screen/Cc.s/en)) (has/Pr.sr.|f--3s-/en (all/M/en (the/Md/en iphone/Cp.s/en)) (to/Mi/en offer/P..-i-----/en)))
 The application must include bank and credit card records.
 ((must/Mm/en include/Pd.so.-i-----/en) (the/Md/en application/Cc.s/en) (and/J/en (+/B.am bank/Cm/en records/Cc.p/en) (+/B.am (+/B.am/. credit/Cc.s/en card/Cc.s/en) records/Cc.p/en)))
 Berlin is the capital city of Germany and one of its states.
