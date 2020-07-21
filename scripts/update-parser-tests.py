@@ -4,7 +4,7 @@ from graphbrain.parsers import *
 
 
 def update_tests(args):
-    parser = create_parser(name=args.lang)
+    parser = create_parser(name=args.lang, resolve_corefs=False)
 
     total = 0
 
@@ -15,7 +15,7 @@ def update_tests(args):
                 if sentence:
                     total += 1
                     parser_output = parser.parse(sentence)
-                    parsed_sentence = parser_output[0]
+                    parsed_sentence = parser_output['parses'][0]
                     edge = parsed_sentence['main_edge']
                     f_out.write('{}\n{}\n'.format(sentence, edge.to_str()))
                     sentence = None

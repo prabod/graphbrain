@@ -146,8 +146,10 @@ class ParserEN(AlphaBeta):
                 return self._concept_type_and_subtype(token)
         elif dep in {'appos', 'attr', 'dative', 'dep', 'dobj', 'nsubj',
                      'nsubjpass', 'oprd', 'pobj', 'meta'}:
-            if self._is_verb(token) and dep == 'dep':
+            if self._is_verb(token) and dep in ['dep', 'dobj']:
                 return 'P'
+            elif token.tag_ == 'JJ' and dep == 'dep':
+                return self._modifier_type_and_subtype(token)
             else:
                 return self._concept_type_and_subtype(token)
         elif dep in {'advcl', 'csubj', 'csubjpass', 'parataxis'}:
@@ -254,7 +256,7 @@ class ParserEN(AlphaBeta):
         dep = token.dep_
         if dep in ['nmod', 'amod'] and not tag[:3] == 'NNP':
             return 'Cm'
-        if tag[:2] == 'JJ':
+        if tag[:2] == 'JJ' or dep == 'conj' and token.head.tag_[:2] == 'JJ':
             return 'Ca'
         elif tag[:2] == 'NN':
             subtype = 'p' if 'P' in tag else 'c'

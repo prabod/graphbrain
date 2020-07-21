@@ -1,5 +1,5 @@
 Berlin is the capital city of Germany and one of its city states.
-(is/Pd.sc.|f--3s-/en berlin/Cp.s/en (and/J/en (the/Md/en (of/Br.ma/en (+/B.am/. capital/Cc.s/en city/Cc.s/en) germany/Cp.s/en)) (of/Br.ma/en one/C#/en (its/Mp/en (+/B.am/. city/Cc.s/en states/Cc.p/en)))))
+(is/Pd.sc.|f--3s-/en berlin/Cp.s/en (and/J/en (of/Br.ma/en (the/Md/en (+/B.am/. capital/Cc.s/en city/Cc.s/en)) germany/Cp.s/en) (of/Br.ma/en one/C#/en (its/Mp/en (+/B.am/. city/Cc.s/en states/Cc.p/en)))))
 Night vision glasses are on sale.
 (are/Pd.sx.|f-----/en (+/B.aam/. night/Cc.s/en vision/Cc.s/en glasses/Cc.p/en) (on/T/en sale/Cc.s/en))
 Night vision glasses for sale.
@@ -12,3 +12,11 @@ Money spent purchasing stock in the secondary market accrues to the stock's prev
 (spent/Pd.sr.<f-----/en money/Cc.s/en (accrues/Pr.sx.|f--3s-/en (in/Br.ma/en (+/B.am/. purchasing/C/en stock/Cc.s/en) (the/Md/en (secondary/Ma/en market/Cc.s/en))) (to/T/en ('s/Bp.am/en (the/Md/en stock/Cc.s/en) (previous/Ma/en owner/Cc.s/en)))))
 If a fund divests from a company on ethical grounds, this can draw attention to the company's bad conduct and reduce its legitimacy.
 (and/J/en ((can/Mm/en draw/Pd.xsox.-i-----/en) (if/T/en (divests/Pd.sxx.|f--3s-/en (a/Md/en fund/Cc.s/en) (from/T/en (a/Md/en company/Cc.s/en)) (on/T/en (ethical/Ma/en grounds/Cc.p/en)))) this/Cd/en attention/Cc.s/en (to/T/en ('s/Bp.am/en (the/Md/en company/Cc.s/en) (bad/Ma/en conduct/Cc.s/en)))) (reduce/P!.o.-i-----/en (its/Mp/en legitimacy/Cc.s/en)))
+ESG integration is the incorporation of environmental, social and governance factors into the investment decision-making process.
+(is/Pd.sc.|f--3s-/en (+/B.am/. esg/Cp.s/en integration/Cc.s/en) (into/Br.ma/en (of/Br.ma/en (the/Md/en incorporation/Cc.s/en) (+/B.am/. (environmental/Ma/en (and/J/en social/Ca/en governance/Ca/en)) factors/Cc.p/en)) (the/Md/en (+/B.am/. investment/Cc.s/en ((decision/M/en making/Mv.|pg----/en) process/Cc.s/en)))))
+Socially responsible investing, a kind of pro-active ethical investing, is less likely to have outright bans on companies.
+(is/Pd.sc.|f--3s-/en (:/J/. ((socially/M/en responsible/Ma/en) investing/Cc.s/en) (of/Br.ma/en (a/Md/en kind/Cc.s/en) (((pro/Ma/en -/Ma/en) active/Ma/en) (ethical/Ma/en investing/Cc.s/en)))) (:/J/. (less/M=/en likely/Ca/en) ((to/Mi/en have/P.o.-i-----/en) (on/Br.ma/en (outright/Ma/en bans/Cc.p/en) companies/Cc.p/en))))
+Believe it or not, autumn was warmer than average for Australia.
+(was/Pd.xsc.<f-----/en (or/J/en (believe/P!.o.-i-----/en it/Ci/en) not/C/en) autumn/Cc.s/en (for/Br.ma/en (than/Br.ma/en warmer/Ca/en average/Ma/en) australia/Cp.s/en))
+"More recently, there's been things like avoiding uranium mining, coal seam gas exploration, old growth forest logging and fossil fuel financing, with people preferring to invest in a future they see as more sustainable through clean energy, energy efficiency and clean transport," she said.
+(said/Pd.rs.<f-----/en (((more/M=/en recently/M/en) (there/Me/en ('s/Mv.|f--3s-/en been/Pr.cx.<pf----/en))) (like/Br.ma/en things/Cc.p/en (avoiding/P.o.|pg----/en (+/B.mmm/. (+/B.am/. uranium/Cc.s/en mining/Cc.s/en) (+/B.aaam/. coal/Cc.s/en seam/Cc.s/en gas/Cc.s/en exploration/Cc.s/en) (and/J/en (old/Ma/en (+/B.aam/. growth/Cc.s/en forest/Cc.s/en logging/Cc.s/en)) (+/B.aam/. fossil/Cm/en fuel/Cc.s/en financing/Cc.s/en))))) (with/T/en (preferring/P.sr.|pg----/en people/Cc.p/en ((to/Mi/en invest/P.x.-i-----/en) (in/T/en (:/J/. (a/Md/en future/Cc.s/en) (see/Pr.sx.|f-----/en they/Ci/en (as/T/en (more/M=/en (sustainable/Ma/en (through/Mr/en (+/B.mm/. (clean/Ma/en energy/Cc.s/en) (and/J/en (+/B.am/. energy/Cc.s/en efficiency/Cc.s/en) (clean/Ma/en transport/Cc.s/en)))))))))))))) she/Ci/en)

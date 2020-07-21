@@ -487,7 +487,7 @@ class AlphaBeta(Parser):
                             # RELATIVE TO CONCEPT
                             relative_to_concept.append(child)
                         elif (child.connector_type()[0] == 'J' and
-                              child.contains_atom_type('Cm')):
+                              child[1].connector_type() == 'Cm'):
                             logging.debug('choice: 2b')
                             # CONCEPT LIST
                             entity = _apply_aux_concept_list_to_concept(
@@ -499,12 +499,12 @@ class AlphaBeta(Parser):
                             next_child = child_up.nest(child)
                         elif entity.connector_type()[0] == 'C' or child.connector_type() == 'Bp':
                             # NEST
-                            if len(child) == 2:
+                            if not entity.is_atom() and entity[0] == atom:
+                                entity = child.nest(entity, pos)
+                                # entity = hedge((entity[0], ))
+                            elif len(child) == 2:
                                 logging.debug('choice: 3a')
-                                new_child = child
-                                if len(child) > 2:
-                                    new_child = hedge((child[0], child[1:]))
-                                entity = entity.nest(new_child, pos)
+                                entity = entity.nest(child, pos)
                             # SEQUENCE
                             else:
                                 logging.debug('choice: 3b')
@@ -558,6 +558,8 @@ class AlphaBeta(Parser):
                                     logging.debug('choice: 7b')
                                     # NEST
                                     entity = child.nest(entity, before=pos)
+                            elif self._is_compound(child_token):
+                                entity = entity.nest(child, before=pos)
                             else:
                                 logging.debug('choice: 8')
                                 # SEQUENCE IN ORIGINAL ATOM
@@ -621,7 +623,15 @@ class AlphaBeta(Parser):
                     entity = nest_predicate(entity, child, pos)
                 else:
                     # PD - connect adjectival modifiers to their parent concept
-                    if child_type == 'Ma' and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
+                    if child_type[0] == 'M' and entity.connector_type()[0] in ['B', 'J']:
+                        if entity.is_atom():
+                            entity = enclose(entity, child)
+                        elif entity[1].connector_type() == 'Br':
+                            new_entity1 = hedge(tuple([entity[1][0], enclose(child, entity[1][1])]) + entity[1][2:])
+                            entity = hedge(tuple([entity[0], new_entity1]) + entity[2:])
+                        else:
+                            entity = hedge(tuple([entity[0], enclose(child, entity[1])]) + entity[2:])
+                    elif child_type == 'Ma' and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
                         logging.debug('choice: 19a')
                         entity = hedge(tuple([enclose(child, entity[0])]) + entity[1:])
                     elif child_type[0] == 'M' and entity.connector_type() == 'Bp':
