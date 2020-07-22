@@ -299,7 +299,11 @@ class AlphaBeta(Parser):
             elif ct[0] == 'B' and entity[0].is_atom() and len(entity) == 2:
                 ps = entity[0].parts()
                 ps[1] = 'M' + ct[1:]
-                return hedge(('/'.join(ps),) + entity[1:]), temporal
+                new_atom = hedge('/'.join(ps))
+                if UniqueAtom(entity[0]) in self.atom2token:
+                    self.atom2token[UniqueAtom(new_atom)] = \
+                        self.atom2token[UniqueAtom(entity[0])]
+                return hedge((new_atom,) + entity[1:]), temporal
 
             # In an edge of size 2 with a modifier applied to a predicate or
             # trigger shouw be reversed
@@ -611,7 +615,10 @@ class AlphaBeta(Parser):
             elif child_type[0] == 'T':
                 logging.debug('choice: 16')
                 # ?
-                entity = enclose(child, entity)
+                if child.is_atom():
+                    entity = enclose(child, entity)
+                else:
+                    entity = hedge((entity, child))
             # elif child_type[0] == 'A':
             #     logging.debug('choice: 17')
             #    # NEST PREDICATE
