@@ -83,7 +83,7 @@ def replace_atom(entity, old, new):
 #     (+/B.am bank/C records/Cn.p)
 #     (+/B.am (credit/Cn.s card/Cn.s) records/Cn.p))
 def _apply_aux_concept_list_to_concept(con_list, concept):
-    concepts = tuple([('+/B.am', item, concept) for item in con_list[1:]])
+    concepts = tuple([('+/B.am/.', item, concept) for item in con_list[1:]])
     return hedge((con_list[0],) + concepts)
 
 
@@ -572,8 +572,12 @@ class AlphaBeta(Parser):
                                     atom.sequence(child, pos))
                         else:
                             logging.debug('choice: 9')
-                            entity = replace_atom(entity,
-                                atom, atom.sequence(child, pos, flat=False))
+                            if entity == atom or entity[0] == atom:
+                                entity = replace_atom(entity,
+                                    atom, atom.sequence(child, pos, flat=False))
+                            else:
+                                entity = entity.sequence(child, pos, flat=False)
+
                 elif ent_type[0] == 'T' and child.connector_type() == 'Mt':
                     logging.debug('choice: 10a')
                     # NEST PREDICATE

@@ -103,7 +103,7 @@ Scientists rise up against statistical significance
 A pretty touch screen is ALL the iPhone has to offer.
 (is/Pd.sr.|f--3s-/en (a/Md/en (+/B.am/. (pretty/Ma/en touch/Cm/en) screen/Cc.s/en)) (has/Pr.sr.|f--3s-/en (all/M/en (the/Md/en iphone/Cp.s/en)) (to/Mi/en offer/P..-i-----/en)))
 The application must include bank and credit card records.
-((must/Mm/en include/Pd.so.-i-----/en) (the/Md/en application/Cc.s/en) (and/J/en (+/B.am bank/Cm/en records/Cc.p/en) (+/B.am (+/B.am/. credit/Cc.s/en card/Cc.s/en) records/Cc.p/en)))
+((must/Mm/en include/Pd.so.-i-----/en) (the/Md/en application/Cc.s/en) (and/J/en (+/B.am/. bank/Cm/en records/Cc.p/en) (+/B.am/. (+/B.am/. credit/Cc.s/en card/Cc.s/en) records/Cc.p/en)))
 Berlin is the capital city of Germany and one of its states.
 (is/Pd.sc.|f--3s-/en berlin/Cp.s/en (and/J/en (of/Br.ma/en (the/Md/en (+/B.am/. capital/Cc.s/en city/Cc.s/en)) germany/Cp.s/en) (of/Br.ma/en one/C#/en (its/Mp/en states/Cc.p/en))))
 The population of the planet is over 170 million people.
