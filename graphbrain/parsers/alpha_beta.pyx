@@ -419,6 +419,7 @@ class AlphaBeta(Parser):
 
                 if subparts[1] == '':
                     args = [self._arg_type(token_dict[param])
+                            if param in token_dict else '?'
                             for param in entity[1:]]
                     args_string = ''.join(args)
                     pt = self._predicate_post_type_and_subtype(
