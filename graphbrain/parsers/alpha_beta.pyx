@@ -50,7 +50,7 @@ def enclose(connector, edge):
 
 def sequence(entity, child, pos):
     # PD - correctly sequence compound nouns into relational or conjunction edges
-    if entity.connector_type() in ['Br', 'J']:
+    if not entity.is_atom() and entity.connector_type() in ['Br', 'J']:
         return hedge(tuple((entity[0], sequence(entity[1], child, pos))) + entity[2:])
     else:
         return entity.sequence(child, pos)
@@ -505,8 +505,7 @@ class AlphaBeta(Parser):
                         elif entity.connector_type()[0] == 'C' or child.connector_type() == 'Bp':
                             # NEST
                             if not entity.is_atom() and entity[0] == atom:
-                                entity = child.nest(entity, pos)
-                                # entity = hedge((entity[0], ))
+                                entity = hedge(tuple(entity[0].sequence(child, pos, flat=False)) + entity[1:])
                             elif len(child) == 2:
                                 logging.debug('choice: 3a')
                                 entity = entity.nest(child, pos)
@@ -548,7 +547,8 @@ class AlphaBeta(Parser):
                                         entity = entity.sequence(child, pos, flat=self._is_compound(child_token))
                                     else:
                                         logging.debug('choice: 6b')
-                                        entity = replace_atom(entity, entity[0], entity[0].sequence(child, pos))
+                                        # entity = replace_atom(entity, entity[0], entity[0].sequence(child, pos))
+                                        entity = hedge(tuple([entity[0].sequence(child, pos)]) + entity[1:])
                                 # elif entity.depth() > 1:
                                 #     entity = hedge(tuple([entity[0].sequence(child, pos, flat=False)]) + entity[1:])
                                 else:
@@ -613,10 +613,16 @@ class AlphaBeta(Parser):
                     entity = child + entity
                 else:
                     entity = hedge(tuple([entity[0].sequence(child, True)]) + entity[1:])
+                    if len(entity[0]) == 3 and entity[0][1].type() == 'Ma' and entity[0][2].type() == 'Ca':
+                        entity = _apply_aux_concept_list_to_concept(entity[0], entity[1])
+
             elif child_type[0] == 'P':
                 logging.debug('choice: 15')
                 # CONNECT
-                entity = entity.connect((child,))
+                if entity.connector_type() in ['Br', 'J']:
+                    entity = sequence(entity, child, pos)
+                else:
+                    entity = entity.connect((child,))
             elif child_type[0] == 'T':
                 logging.debug('choice: 16')
                 # ?
@@ -643,7 +649,7 @@ class AlphaBeta(Parser):
                             entity = hedge(tuple([entity[0], new_entity1]) + entity[2:])
                         else:
                             entity = hedge(tuple([entity[0], enclose(child, entity[1])]) + entity[2:])
-                    elif child_type == 'Ma' and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
+                    elif child_type in ['Ma', 'M#'] and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
                         logging.debug('choice: 19a')
                         entity = hedge(tuple([enclose(child, entity[0])]) + entity[1:])
                     elif child_type[0] == 'M' and entity.connector_type() == 'Bp':
@@ -664,7 +670,11 @@ class AlphaBeta(Parser):
 
         if len(relative_to_concept) > 0:
             relative_to_concept.reverse()
-            entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
+            if entity == atom or atom not in entity[0].atoms():
+                entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
+            else:
+                new_entity = hedge((':/J/.', entity[0]) + tuple(relative_to_concept))
+                entity = hedge(tuple([new_entity]) + entity[1:])
 
         entity = self._post_parse_token(entity, token_dict)
 

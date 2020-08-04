@@ -152,8 +152,13 @@ class ParserEN(AlphaBeta):
                 return self._modifier_type_and_subtype(token)
             else:
                 return self._concept_type_and_subtype(token)
-        elif dep in {'advcl', 'csubj', 'csubjpass', 'parataxis'}:
+        elif dep in {'advcl', 'csubj', 'csubjpass'}:
             return 'Pd'
+        elif dep == 'parataxis':
+            if self._is_verb(token):
+                return 'Pd'
+            else:
+                return self._concept_type_and_subtype(token)
         elif dep in {'relcl', 'ccomp'}:
             if self._is_verb(token):
                 return 'Pr'
@@ -364,10 +369,11 @@ class ParserEN(AlphaBeta):
         return token.tag_[:2] == 'NN'
 
     def _is_compound(self, token):
-        return token.dep_ == 'compound'
+        return token.dep_ in ['compound', 'npadvmod']
 
     def _is_relative_concept(self, token):
-        return token.dep_ == 'appos'
+        # return token.dep_ == 'appos'
+        return token.dep_ in ['appos', 'parataxis']
 
     def _is_verb(self, token):
         tag = token.tag_
