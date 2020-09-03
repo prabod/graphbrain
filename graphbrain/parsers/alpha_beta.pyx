@@ -682,25 +682,25 @@ class AlphaBeta(Parser):
 
                     entity = hedge(new_entity)
             else:
-            if entity == atom or atom not in entity[0].atoms():
-                entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
-            else:
-                new_entity = hedge((':/J/.', entity[0]) + tuple(relative_to_concept))
-                entity = hedge(tuple([new_entity]) + entity[1:])
+                if entity == atom or atom not in entity[0].atoms():
+                    entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
+                else:
+                    new_entity = hedge((':/J/.', entity[0]) + tuple(relative_to_concept))
+                    entity = hedge(tuple([new_entity]) + entity[1:])
 
         entity = self._post_parse_token(entity, token_dict)
 
         return entity, self.extra_edges
 
     def _generate_atom2word(self, edge):
-        atom2word = {}
+        atom2word = []
         atoms = edge.all_atoms()
         for atom in atoms:
             uatom = UniqueAtom(atom)
             if uatom in self.atom2token:
                 token = self.atom2token[uatom]
                 word = (token.text, token.i)
-                atom2word[uatom] = word
+                atom2word.append((uatom, word))
         return atom2word
 
     def _parse_sentence(self, sent):
