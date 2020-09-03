@@ -518,10 +518,7 @@ class AlphaBeta(Parser):
                             logging.debug('choice: 4a')
                             # NEST AROUND ORIGINAL ATOM
                             if atom.type()[0] == 'C' and len(child) > 2:
-                                new_child = hedge((child[0], child[1:]))
-                                entity = replace_atom(entity,
-                                    atom,
-                                    atom.nest(new_child, pos))
+                                entity = entity.nest(child, pos)
                             else:
                                 logging.debug('choice: 4b')
                                 # NEST AROUND ORIGINAL ATOM
@@ -670,6 +667,21 @@ class AlphaBeta(Parser):
 
         if len(relative_to_concept) > 0:
             relative_to_concept.reverse()
+
+            if len(relative_to_concept) == 1 and len(relative_to_concept[0]) == 1:
+                # apposition style
+                if entity == atom or entity.all_atoms()[-1] == atom:
+                    entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
+                else:
+                    new_entity = []
+                    for edge in entity:
+                        if edge == atom or edge.all_atoms()[-1] == atom:
+                            new_entity.append(hedge((':/J/.', edge) + tuple(relative_to_concept)))
+                        else:
+                            new_entity.append(edge)
+
+                    entity = hedge(new_entity)
+            else:
             if entity == atom or atom not in entity[0].atoms():
                 entity = hedge((':/J/.', entity) + tuple(relative_to_concept))
             else:
