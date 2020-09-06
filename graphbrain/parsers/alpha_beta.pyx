@@ -711,7 +711,7 @@ class AlphaBeta(Parser):
                 main_edge, _ = self._post_process(main_edge)
                 atom2word = self._generate_atom2word(main_edge)
             else:
-                atom2word = {}
+                atom2word = []
 
             return {'main_edge': main_edge,
                     'extra_edges': extra_edges,
@@ -729,7 +729,7 @@ class AlphaBeta(Parser):
             return {'main_edge': None,
                     'extra_edges': [],
                     'text': str(sent).strip(),
-                    'atom2word': {},
+                    'atom2word': [],
                     'spacy_sentence': sent}
 
     def _parse(self, text):
