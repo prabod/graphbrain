@@ -641,11 +641,11 @@ class AlphaBeta(Parser):
                     if child_type[0] == 'M' and entity.connector_type()[0] in ['B', 'J']:
                         if entity.is_atom():
                             entity = enclose(entity, child)
-                        elif entity[1].connector_type() == 'Br':
+                        elif entity[1].connector_type() == 'Br' and not entity[1].is_atom():
                             new_entity1 = hedge(tuple([entity[1][0], enclose(child, entity[1][1])]) + entity[1][2:])
                             entity = hedge(tuple([entity[0], new_entity1]) + entity[2:])
                         else:
-                            entity = hedge(tuple([entity[0], enclose(child, entity[1])]) + entity[2:])
+                            entity = hedge(tuple([entity[0], entity[1].sequence(child, pos, flat=False)]) + entity[2:])
                     elif child_type in ['Ma', 'M#'] and entity.connector_type() != 'J' and entity.contains_atom_type('J'):
                         logging.debug('choice: 19a')
                         entity = hedge(tuple([enclose(child, entity[0])]) + entity[1:])
