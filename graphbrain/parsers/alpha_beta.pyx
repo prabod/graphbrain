@@ -573,6 +573,9 @@ class AlphaBeta(Parser):
                             if entity == atom or entity[0] == atom:
                                 entity = replace_atom(entity,
                                     atom, atom.sequence(child, pos, flat=False))
+                            elif entity[1] == atom:
+                                entity = hedge(
+                                    tuple([entity[0], entity[1].sequence(child, pos, flat=False)]) + entity[2:])
                             else:
                                 entity = entity.sequence(child, pos, flat=False)
 

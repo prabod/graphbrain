@@ -239,6 +239,8 @@ class ParserEN(AlphaBeta):
         elif dep == 'conj':
             if head_type == 'P' and self._is_verb(token):
                 return 'Pd'
+            elif head_type == 'B':
+                return self._builder_type_and_subtype(token)
             else:
                 return self._concept_type_and_subtype(token)
         elif dep == 'mark':
