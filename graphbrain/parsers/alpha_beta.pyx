@@ -718,7 +718,7 @@ class AlphaBeta(Parser):
 
             return {'main_edge': main_edge,
                     'extra_edges': extra_edges,
-                    'text': str(sent).strip(),
+                    'text': str(sent),
                     'atom2word': atom2word,
                     'spacy_sentence': sent}
         except Exception as e:
@@ -731,7 +731,7 @@ class AlphaBeta(Parser):
             traceback.print_exc()
             return {'main_edge': None,
                     'extra_edges': [],
-                    'text': str(sent).strip(),
+                    'text': str(sent),
                     'atom2word': [],
                     'spacy_sentence': sent}
 
@@ -759,7 +759,7 @@ class AlphaBeta(Parser):
         self.coref_clusters = defaultdict(set)
         self.edge2coref = {}
         self.cur_text = text
-        doc = self.nlp(text.strip())
+        doc = self.nlp(text)
         parses = tuple(self._parse_sentence(sent) for sent in doc.sents)
         return {'parses': parses, 'inferred_edges': []}
 
